@@ -1,0 +1,10 @@
+['/home/shingo/sensor', '/home/shingo/sensor/.envs/venv/lib/python2.7', '/home/shingo/sensor/.envs/venv/lib/python2.7/plat-linux2', '/home/shingo/sensor/.envs/venv/lib/python2.7/lib-tk', '/home/shingo/sensor/.envs/venv/lib/python2.7/lib-old', '/home/shingo/sensor/.envs/venv/lib/python2.7/lib-dynload', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/home/shingo/sensor/.envs/venv/local/lib/python2.7/site-packages', '/home/shingo/sensor/.envs/venv/lib/python2.7/site-packages']
+['/home/shingo/sensor', '/home/shingo/sensor/.envs/venv/lib/python2.7', '/home/shingo/sensor/.envs/venv/lib/python2.7/plat-linux2', '/home/shingo/sensor/.envs/venv/lib/python2.7/lib-tk', '/home/shingo/sensor/.envs/venv/lib/python2.7/lib-old', '/home/shingo/sensor/.envs/venv/lib/python2.7/lib-dynload', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/home/shingo/sensor/.envs/venv/local/lib/python2.7/site-packages', '/home/shingo/sensor/.envs/venv/lib/python2.7/site-packages']
+Sensor Open
+$0C,OK
+$0B,22.90,38.50,206.05,1294.05
+22.90
+38.50
+206.05
+1294.05
+startign xively tutorial script
