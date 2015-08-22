@@ -11,6 +11,7 @@ import time
 import datetime
 import sensor
 import xively_test
+import sensor_http
 
 import logging
 import logging.config
@@ -45,6 +46,10 @@ if __name__ == '__main__':
         xively_test.set_time(utc_now)
         xively_test.set_value(atm, tmp, hum, lux)
         xively_test.update()
+
+        sensor_http.set_time(utc_now)
+        sensor_http.set_value(atm, tmp, hum, lux)
+        sensor_http.update()
     else:
         log.error("sensor update fail")
 
