@@ -3,10 +3,9 @@
 # cron_sensor.sh
 # cron実行用
 
-cd ~/share/sensor
+cd ~/sensor
 source .envs/venv/bin/activate
-#~/sensor/xively_test.py
-~/share/sensor/main.py
+~/sensor/main.py
 deactivate
 
 # crontabへ追加
