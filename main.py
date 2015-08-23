@@ -4,14 +4,14 @@
 # main.py
 # main script
 
-import sys
-import os
-import serial
-import time
+# import sys
+# import os
+# import serial
+# import time
 import datetime
 import sensor
 import xively_test
-import sensor_http
+import web
 
 import logging
 import logging.config
@@ -19,13 +19,13 @@ logging.config.fileConfig('logging.conf')
 log = logging.getLogger()
 
 
-#----------------
+# --------------------
 #
-#---------------
+# --------------------
 if __name__ == '__main__':
     log.info("Start main.py")
-    ret = sensor.update()    
-    if( ret == True ):
+    ret = sensor.update()
+    if ret is True:
         log.info("sensor update successful")
         atm = sensor.get_atm()
         tmp = sensor.get_tmp()
@@ -47,11 +47,13 @@ if __name__ == '__main__':
         xively_test.set_value(atm, tmp, hum, lux)
         xively_test.update()
 
-        sensor_http.set_time(utc_now)
-        sensor_http.set_value(atm, tmp, hum, lux)
-        sensor_http.update()
+        web.set_time(utc_now)
+        web.set_value(atm, tmp, hum, lux)
+        web.update()
     else:
         log.error("sensor update fail")
 
     log.info("Finish main.py")
 
+
+# end of main.py
