@@ -4,11 +4,11 @@
 # xively_test.py
 # Upload xively
 
-import sys
-import os
+# import sys
+# import os
 import xively
 import xively_key
-import subprocess
+# import subprocess
 import time
 import datetime
 import requests
@@ -19,9 +19,6 @@ import logging.config
 logging.config.fileConfig('logging.conf')
 log = logging.getLogger()
 
-
-#For include check
-#print sys.path
 
 atm = 0.0
 tmp = 0.0
@@ -37,7 +34,8 @@ DEBUG = True
 # initialize api client
 api = xively.XivelyAPIClient(API_KEY)
 
-# function to return a datastream object. 
+
+# function to return a datastream object.
 # This either creates a new datastream,
 # or returns an existing one
 def get_datastream(feed):
@@ -48,20 +46,21 @@ def get_datastream(feed):
         datastream = feed.datastreams.create("Sensor", tags="atom")
         return datastream
 
-#----------------
+
+# --------------------
 #
-#---------------
-def set_time( time_utc):
+# --------------------
+def set_time(time_utc):
     log.debug("xively_test.set_time()")
     global time
     time = time_utc
     log.debug("time:" + str(time))
 
 
-#----------------
+# --------------------
 #
-#---------------
-def set_value( arg_atm, arg_tmp, arg_hum, arg_lux ):
+# --------------------
+def set_value(arg_atm, arg_tmp, arg_hum, arg_lux):
     log.debug("xively_test.set_value()")
     global atm
     global hum
@@ -77,15 +76,14 @@ def set_value( arg_atm, arg_tmp, arg_hum, arg_lux ):
     log.debug("lux:" + str(lux))
 
 
-#----------------
+# --------------------
 #
-#---------------
+# --------------------
 def update():
     log.debug("xively_test.update()")
     # initialize api client
     api = xively.XivelyAPIClient(API_KEY)
     feed = api.feeds.get(FEED_ID)
-
 
     feed.datastreams = [
         xively.Datastream(id='Atmospheric', current_value=atm, at=time),
@@ -98,12 +96,10 @@ def update():
     except requests.HTTPError as e:
         log.error("HTTPError([0]): {1}".format(e.errno, e.strerror))
 
-
     log.debug("atm:" + str(atm))
     log.debug("tmp:" + str(tmp))
     log.debug("hum:" + str(hum))
     log.debug("lux:" + str(lux))
-
 
 #    datastream = get_datastream(feed)
 #    datastream.max_value = None
@@ -112,7 +108,7 @@ def update():
 #    if DEBUG:
 #        print "Updating Xively feed with values"
 
-#    datastream.current_value = 1000 
+#    datastream.current_value = 1000
 #    datastream.at = datetime.datetime.utcnow()
 
 #    try:
@@ -120,15 +116,15 @@ def update():
 #    except requests.HTTPError as e:
 #        print "HTTPError([0]): {1}".format(e.errno, e.strerror)
 
-#----------------
+# --------------------
 # main
-#----------------
+# --------------------
 if __name__ == '__main__':
     d = datetime.datetime.today()
     print "%s" % (d)
     print "Start xively_test.py"
     ret = sensor.update()
-    if( ret == True ):
+    if(ret is True):
         atm = sensor.get_atm()
         tmp = sensor.get_tmp()
         hum = sensor.get_hum()
@@ -137,4 +133,4 @@ if __name__ == '__main__':
         update()
     print "End xively_test.py"
 
-
+# end of xively_test.py
