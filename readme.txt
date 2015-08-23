@@ -35,6 +35,9 @@ $ source .envs/venv/bin/activate
 $ pip install xively-python
 $ pip install pyserial
 
+$ pip install pyflakes
+$ pip install pep8
+
 xively_test.py
 FEED_ID = "èCê≥"
 API_KEY = "èCê≥"
